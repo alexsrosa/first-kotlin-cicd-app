@@ -8,7 +8,7 @@ on:
     
 env:
   IMAGE_NAME: fists-kotlin-cicd-app
-  IMAGE_TAG: $GITHUB_SHA-$(date +%s)
+  IMAGE_TAG: $(echo $GITHUB_SHA | head -c7)
   REGISTRY: registry.digitalocean.com/sa-container-registry-dev
 
 jobs:
