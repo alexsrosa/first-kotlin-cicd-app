@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: first-kotlin-cicd-app-ingress
+  namespace: apps
+#  annotations:
+#    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  labels:
+    app: first-kotlin-cicd-app
+spec:
+  rules:
+#    - host: {{ .Values.application.host }}{{ .Values.ingress.domain }}
+     - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: first-kotlin-cicd-app
+                port:
+                  number: 8080
+  ingressClassName: nginx

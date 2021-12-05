@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: first-kotlin-cicd-app
+  namespace: apps
+  labels:
+    app: first-kotlin-cicd-app
 spec:
   type: ClusterIP
   selector:

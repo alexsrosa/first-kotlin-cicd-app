@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: first-kotlin-cicd-app
+  namespace: apps
+  labels:
+    app: first-kotlin-cicd-app
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5

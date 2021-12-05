@@ -2,6 +2,9 @@ apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: first-kotlin-cicd-app
+  namespace: apps
+  labels:
+    app: first-kotlin-cicd-app
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
