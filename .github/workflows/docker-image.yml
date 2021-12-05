@@ -8,7 +8,7 @@ on:
     
 env:
   IMAGE_NAME: fists-kotlin-cicd-app
-  IMAGE_TAG: ${GITHUB_BRANCH}-${{ github.sha::6 }}-${{ github.run_number }}
+  IMAGE_TAG: ${GITHUB_BRANCH}-${GITHUB_SHA::8}-${{ github.run_number }}
   REGISTRY: registry.digitalocean.com/sa-container-registry-dev
 
 jobs:
