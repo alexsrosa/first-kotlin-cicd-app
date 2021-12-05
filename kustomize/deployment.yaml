@@ -24,7 +24,7 @@ spec:
       containers:
         - name: first-kotlin-cicd-app
           image: registry.digitalocean.com/sa-container-registry-dev/fists-kotlin-cicd-app:21f287f8
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8080
@@ -36,3 +36,5 @@ spec:
             requests:
               cpu: 100m
               memory: 64Mi
+      imagePullSecrets:
+        - name: docker-cfg
