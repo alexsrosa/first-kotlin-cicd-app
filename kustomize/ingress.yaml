@@ -3,7 +3,8 @@ kind: Ingress
 metadata:
   name: first-kotlin-cicd-app-ingress
   namespace: apps
-#  annotations:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 #    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
   labels:
     app: first-kotlin-cicd-app
@@ -12,7 +13,7 @@ spec:
 #    - host: {{ .Values.application.host }}{{ .Values.ingress.domain }}
      - http:
         paths:
-          - path: /api
+          - path: /api(/|$)(.*)
             pathType: Prefix
             backend:
               service:
