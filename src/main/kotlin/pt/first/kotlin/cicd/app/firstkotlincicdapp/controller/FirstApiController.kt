@@ -12,7 +12,7 @@ import java.util.*
  * @since 04/12/2021 17:34
  */
 @RestController
-@RequestMapping("/v1/api/first")
+@RequestMapping("/v1/first")
 class FirstApiController {
 
     @GetMapping
