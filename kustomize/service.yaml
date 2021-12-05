@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-kotlin-cicd-app
+spec:
+  type: ClusterIP
+  selector:
+    app: first-kotlin-cicd-app
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: http
