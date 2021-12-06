@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: first-kotlin-cicd-app
-          image: registry.digitalocean.com/sa-container-registry-dev/fists-kotlin-cicd-app:d2e51fab73b23b6746b54aa2319396d04519c2e5-25
+          image: registry.digitalocean.com/sa-container-registry-dev/fists-kotlin-cicd-app:c670a9cfe6a0529a4f68edc97006c5e8f19f812b-26
           imagePullPolicy: Always
           ports:
             - name: http
