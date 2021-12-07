@@ -13,7 +13,7 @@ spec:
 #    - host: {{ .Values.application.host }}{{ .Values.ingress.domain }}
      - http:
         paths:
-          - path: /api-test(/|$)(.*)
+          - path: /api(/|$)(.*)
             pathType: Prefix
             backend:
               service:
