@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: first-kotlin-cicd-app
-          image: registry.digitalocean.com/sa-container-registry-dev/fists-kotlin-cicd-app:main-38e23f8-1638986069 # {"$imagepolicy": "flux-system:fists-kotlin-cicd-app"}
+          image: registry.digitalocean.com/sa-container-registry-dev/fists-kotlin-cicd-app:main-a0a5966-1638986476 # {"$imagepolicy": "flux-system:fists-kotlin-cicd-app"}
           imagePullPolicy: Always
           ports:
             - name: http
