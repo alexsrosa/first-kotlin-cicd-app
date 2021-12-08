@@ -26,6 +26,7 @@ jobs:
       id: prep
       run: |
         TAG=${GIT_BRANCH}-${GIT_SHA:0:7}-$(date +%s)
+        echo ::set-output name=TAG::${TAG}      
       
     - name: Build the Docker image
       run: |
