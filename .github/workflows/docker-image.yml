@@ -21,8 +21,16 @@ jobs:
     - name: Git Checkout
       uses: actions/checkout@v2
       
+      
+    - name: Prepare
+      id: prep
+      run: |
+        TAG=${GIT_BRANCH}-${GIT_SHA:0:7}-$(date +%s)
+      
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $REGISTRY/$IMAGE_NAME:${{ github.sha }}-${{ github.run_number }}
+      run: |
+        echo ${{ steps.prep.outputs.TAG }}
+        docker build . --file Dockerfile --tag $REGISTRY/$IMAGE_NAME:${{ steps.prep.outputs.TAG }}
       
     - name: Install doctl
       uses: digitalocean/action-doctl@v2.1.0
@@ -33,4 +41,4 @@ jobs:
       run: doctl registry login --expiry-seconds 600
 
     - name: Push image to DigitalOcean Container Registry
-      run: docker push $REGISTRY/$IMAGE_NAME:${{ github.sha }}-${{ github.run_number }}
+      run: docker push $REGISTRY/$IMAGE_NAME:${{ steps.prep.outputs.TAG }}
