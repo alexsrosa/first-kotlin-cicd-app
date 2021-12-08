@@ -18,15 +18,15 @@ spec:
       app: first-kotlin-cicd-app
   template:
     metadata:
-#      annotations:
-#        prometheus.io/scrape: "true"
-#        prometheus.io/port: "9797"
+      #      annotations:
+      #        prometheus.io/scrape: "true"
+      #        prometheus.io/port: "9797"
       labels:
         app: first-kotlin-cicd-app
     spec:
       containers:
         - name: first-kotlin-cicd-app
-          image: registry.digitalocean.com/sa-container-registry-dev/fists-kotlin-cicd-app:main-d32b9d0-1638979714 # {"$imagepolicy": "flux-system:fists-kotlin-cicd-app"}
+          image: registry.digitalocean.com/sa-container-registry-dev/fists-kotlin-cicd-app:main-ee47db5-1638983615 # {"$imagepolicy": "flux-system:fists-kotlin-cicd-app"}
           imagePullPolicy: Always
           ports:
             - name: http
