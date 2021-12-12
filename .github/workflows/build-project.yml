@@ -1,8 +1,6 @@
 name: Create Docker Image CI
 
-on:
-  push:
-    branches: [ * ]
+on: [push, pull_request]
     
 jobs:
   build:
