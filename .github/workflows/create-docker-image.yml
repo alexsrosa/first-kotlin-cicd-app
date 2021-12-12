@@ -1,14 +1,12 @@
-name: Docker Image CI
+name: Create Docker Image CI
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ developement, staging, main ]
     
 env:
   IMAGE_NAME: fists-kotlin-cicd-app
-  REGISTRY: registry.digitalocean.com/sa-container-registry-dev
+  REGISTRY: registry.digitalocean.com/sa-container-registry-dev # TODO: Customize name of registry
 
 jobs:
 
@@ -36,7 +34,7 @@ jobs:
     - name: Install doctl
       uses: digitalocean/action-doctl@v2.1.0
       with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} # TODO: Customize name of secret
           
     - name: Log in to DigitalOcean Container Registry with short-lived credentials
       run: doctl registry login --expiry-seconds 600
