@@ -1,4 +1,4 @@
-name: Create Docker Image CI
+name: Build Project
 
 on: [push, pull_request]
     
